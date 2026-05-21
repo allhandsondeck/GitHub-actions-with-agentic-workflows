@@ -1332,6 +1332,10 @@ jobs:
           GH_AW_INFO_VERSION: "1.0.48"
           GH_AW_INFO_BODY_MODIFIED: "false"
           GH_AW_INFO_ENGINE_ID: "copilot"
+      - name: Ensure workflow_install_note.md exists
+        run: |
+          mkdir -p "${RUNNER_TEMP}/gh-aw/md"
+          touch "${RUNNER_TEMP}/gh-aw/md/workflow_install_note.md"
       - name: Download agent output artifact
         id: download-agent-output
         continue-on-error: true
